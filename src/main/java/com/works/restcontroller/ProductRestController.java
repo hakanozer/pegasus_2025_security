@@ -3,6 +3,7 @@ package com.works.restcontroller;
 import com.works.entity.Product;
 import com.works.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class ProductRestController {
     }
 
     @GetMapping("list")
-    public List<Product> list() {
-        return productService.list();
+    public Page<Product> list(@RequestParam(name = "pageNumber", defaultValue = "0") int pageNumber) {
+        return productService.list(pageNumber);
     }
 
 }

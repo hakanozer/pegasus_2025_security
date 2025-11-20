@@ -3,6 +3,7 @@ package com.works.restcontroller;
 import com.works.entity.Note;
 import com.works.service.NoteService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class NoteRestController {
     }
 
     @GetMapping("list")
-    public List<Note> list(){
-        return noteService.list();
+    public Page<Note> list(@RequestParam(name = "pageNumber", defaultValue = "0") int pageNumber){
+        return noteService.list(pageNumber);
     }
 
 }

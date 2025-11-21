@@ -35,4 +35,8 @@ public class CustomerRegisterDto implements Serializable {
             message = "Password en 6 karakter, Büyük küçük harf, sayısal değer ve (-=.?) değerleri almalıdır."
     )
     private String password;
+    @NotNull
+    @Size(min = 11, max = 11)
+    @NotEmpty
+    private String tc;
 }

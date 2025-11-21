@@ -128,3 +128,7 @@
 [2025-11-21 11:35:21] Session Id: 1560DA5C880C2AA0C17806679FAB4F66 | User: zehra@mail.com | Time: 1763714121141 | URL: /api/v1/product/list | Agent: PostmanRuntime/7.49.1
 [2025-11-21 11:37:15] Session Id: E2F0759FD5ADEC363AF568A205271F8E | User: zehra@mail.com | Time: 1763714235206 | URL: /api/v1/product/list | Agent: PostmanRuntime/7.49.1
 [2025-11-21 11:38:16] Session Id: E2F0759FD5ADEC363AF568A205271F8E | User: zehra@mail.com | Time: 1763714296323 | URL: /api/v1/product/list | Agent: PostmanRuntime/7.49.1
+[2025-11-21 13:54:59] Session Id: CBA7A43E4EA6EC6DB8160502FD311EA2 | User: zehra@mail.com | Time: 1763722499024 | URL: /api/v1/customer/register | Agent: PostmanRuntime/7.49.1
+[2025-11-21 13:56:14] Session Id: CBA7A43E4EA6EC6DB8160502FD311EA2 | User: zehra@mail.com | Time: 1763722574970 | URL: /api/v1/customer/register | Agent: PostmanRuntime/7.49.1
+[2025-11-21 14:02:49] Session Id: A49DCD808771CFF2CAFDE0CA80CE02D5 | User: zehra@mail.com | Time: 1763722969106 | URL: /api/v1/product/list | Agent: PostmanRuntime/7.49.1
+[2025-11-21 14:04:49] Session Id: A49DCD808771CFF2CAFDE0CA80CE02D5 | User: su@mail.com | Time: 1763723089049 | URL: /api/v1/user/product/list | Agent: PostmanRuntime/7.49.1

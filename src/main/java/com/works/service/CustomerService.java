@@ -33,12 +33,15 @@ public class CustomerService implements UserDetailsService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
     private final DB db;
+    private final TinkEncDec tinkEncDec;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Customer> optionalCustomer = customerRepository.findByEmailEqualsIgnoreCase(username);
         if (optionalCustomer.isPresent()) {
             Customer customer = optionalCustomer.get();
+            String plainTc = tinkEncDec.decrypt(customer.getTc());
+            System.out.println(plainTc);
             return new User(
                     customer.getEmail(),
                     customer.getPassword(),
@@ -65,6 +68,8 @@ public class CustomerService implements UserDetailsService {
         List<Role> roles = new ArrayList<>();
         roles.add(role);
         customer.setRoles(roles);
+        String encryptTc = tinkEncDec.encrypt(customer.getTc());
+        customer.setTc(encryptTc);
         return customerRepository.save(customer);
     }
 

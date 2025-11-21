@@ -1,6 +1,8 @@
 package com.works.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.Data;
 
 import java.util.List;
@@ -27,4 +29,6 @@ public class Customer {
 
     @ManyToMany
     private List<Role> roles;
+
+    private String tc;
 }

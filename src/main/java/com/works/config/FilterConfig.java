@@ -44,7 +44,9 @@ public class FilterConfig implements Filter {
             String agent = req.getHeader("User-Agent");
             
             // Asenkron log yazma
+            System.out.println("log yazma start:" + System.currentTimeMillis());
             logService.writeLog(sessionId, username, time, url, agent);
+            System.out.println("log yazma end:" + System.currentTimeMillis());
 
             filterChain.doFilter(req, res);
         } else {

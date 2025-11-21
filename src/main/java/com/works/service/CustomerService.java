@@ -16,6 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -29,6 +32,7 @@ public class CustomerService implements UserDetailsService {
     private final CustomerRepository customerRepository;
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
+    private final DB db;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -62,6 +66,20 @@ public class CustomerService implements UserDetailsService {
         roles.add(role);
         customer.setRoles(roles);
         return customerRepository.save(customer);
+    }
+
+
+    public boolean control(String name, String surname) {
+        try {
+            String sql = "SELECT * FROM customer WHERE name = ? AND surname = '"+surname+"'";
+            PreparedStatement st = db.dataSource().getConnection().prepareStatement(sql);
+            st.setString(1, name);
+            //st.setString(2, surname);
+            ResultSet rs = st.executeQuery();
+            return rs.next();
+        }catch (Exception e){
+            return false;
+        }
     }
 
 

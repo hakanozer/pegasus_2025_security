@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "c445fc04-7b68-4f3b-b9be-3846d04693a5",
+		"name": "Pegasus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1939021",
+		"_collection_link": "https://bold-sunset-964485.postman.co/workspace/Hakan---Workspace~34994f6e-e462-402e-8160-d96185a22bd7/collection/1939021-c445fc04-7b68-4f3b-b9be-3846d04693a5?action=share&source=collection_link&creator=1939021"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "Customer Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Lale\",\n    \"surname\": \"Bilirler\",\n    \"email\": \"lale@mail.com\",\n    \"password\": \"Aa1234-\",\n    \"tc\": \"12121212121\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}customer/register",
+							"host": [
+								"{{baseUrl}}customer"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Control",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Veli\",\n    \"surname\": \"Bilsin\",\n    \"email\": \"veli@mail.com\",\n    \"password\": \"Aa1234-\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}customer/control/Ali/' or 1 = 1 --",
+							"host": [
+								"{{baseUrl}}customer"
+							],
+							"path": [
+								"control",
+								"Ali",
+								"' or 1 = 1 --"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Product Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Avize\",\n    \"detail\": \"Avize Detail\",\n    \"price\": \"40000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}product/save",
+							"host": [
+								"{{baseUrl}}product"
+							],
+							"path": [
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}product/list?pageNumber=0",
+							"host": [
+								"{{baseUrl}}product"
+							],
+							"path": [
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "note",
+			"item": [
+				{
+					"name": "Note Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Veli Toplantısı\",\n    \"detail\": \"Toplantısı Ayrıntısı\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}note/save",
+							"host": [
+								"{{baseUrl}}note"
+							],
+							"path": [
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Note List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}note/list?pageNumber=0",
+							"host": [
+								"{{baseUrl}}note"
+							],
+							"path": [
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Product List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}user/product/list?pageNumber=0",
+							"host": [
+								"{{baseUrl}}user"
+							],
+							"path": [
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Note List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}user/note/list?pageNumber=0",
+							"host": [
+								"{{baseUrl}}user"
+							],
+							"path": [
+								"note",
+								"list"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "su@mail.com",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "Aa1234-",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8090/api/v1/"
+		}
+	]
+}
